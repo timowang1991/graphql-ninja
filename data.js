@@ -18,19 +18,22 @@ let cars = [
         id: 1,
         make: 'Ford',
         model: 'Focus',
-        colour: 'red'
+        colour: 'red',
+        ownedBy: 1
     },
     {
         id: 2,
         make: 'Fiat',
         model: '500',
-        colour: 'blue'
+        colour: 'blue',
+        ownedBy: 1
     },
     {
         id: 3,
         make: 'Mercedes',
         model: 'C250',
-        colour: 'silver'
+        colour: 'silver',
+        ownedBy: 3
     },
 ]
 

@@ -6,11 +6,15 @@ const resolvers = {
         car: (parent, { id }, { models }) => models.Car.findByPk(id),
     },
     Mutation: {
-        createCar: (parent, { make, model, colour }, { models }) => {
+        createCar: (parent, { make, model, colour }, { models, me }) => {
+            if (!me) {
+                throw new Error('Not authenticated');
+            }
             const car = {
                 make,
                 model,
-                colour
+                colour,
+                userId: me.id,
             };
             return models.Car.create(car);
         },

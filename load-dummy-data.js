@@ -4,6 +4,8 @@ const models = require('./models');
 const createData = () => [
     models.User.create({
         name: 'Tamas',
+        username: 'tamas',
+        password: 'test1',
         cars: [{
             make: 'Mercede',
             model: 'A250',
@@ -15,6 +17,8 @@ const createData = () => [
 
     models.User.create({
         name: 'Susan',
+        username: 'susan',
+        password: 'test2',
         cars: [{
             make: 'Toyota',
             model: 'Yaris',
@@ -26,6 +30,8 @@ const createData = () => [
 
     models.User.create({
         name: 'Steven',
+        username: 'steven',
+        password: 'test3',
         cars: [{
             make: 'Fiat',
             model: '500',

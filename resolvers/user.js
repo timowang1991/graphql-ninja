@@ -18,6 +18,21 @@ const resolvers = {
                 }
             })
         },
+        register: async (parent, { name, username, password }, { models }) => {
+            const user = {
+                name,
+                username,
+                password
+            };
+
+            try {
+                const registeredUser = await models.User.create(user);
+                return typeof registeredUser.id === 'number';
+            } catch (error) {
+                console.error(error);
+            }
+            return false;
+        }
     },
     User: {
         car: (parent, args, { models }) => {

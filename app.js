@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -15,6 +17,7 @@ const server = new ApolloServer({
     resolvers,
     context: {
         models,
+        secret: process.env.JWT_SECRET
         // me
     }
 });
